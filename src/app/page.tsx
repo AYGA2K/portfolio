@@ -20,7 +20,8 @@ export default function Home() {
               onClick={() => {
                 handleLinkClick(1);
               }}
-              className={`font-bold cursor-pointer text-gray-500 transition-colors duration-300 ${activeDiv === 1 ? "before:content-['|'] before:px-2 before:ml-0.5 before:text-orange-500 text-blue-900 text-xl" : ""
+              className={`font-bold cursor-pointer text-gray-500 transition-
+colors duration-300 ${activeDiv === 1 ? "before:content-['|'] before:px-2 before:ml-0.5 before:text-orange-500 text-blue-700 text-xl" : ""
                 } hover:text-sky-500 hover:scale-105`}
             >
               Profile
@@ -30,7 +31,7 @@ export default function Home() {
               onClick={() => {
                 handleLinkClick(2);
               }}
-              className={`font-bold cursor-pointer text-gray-500 transition-colors duration-300 ${activeDiv === 2 ? "before:content-['|'] before:px-2 before:ml-0.5 before:text-orange-500 text-blue-900 text-xl" : ""
+              className={`font-bold cursor-pointer text-gray-500 transition-colors duration-300 ${activeDiv === 2 ? "before:content-['|'] before:px-2 before:ml-0.5 before:text-orange-500 text-blue-700 text-xl" : ""
                 } hover:text-sky-500 hover:scale-105`}
             >
               Skills
@@ -40,7 +41,7 @@ export default function Home() {
               onClick={() => {
                 handleLinkClick(3);
               }}
-              className={`font-bold cursor-pointer text-gray-500 transition-colors duration-300 ${activeDiv === 3 ? "before:content-['|'] before:px-2 before:ml-0.5 before:text-orange-500 text-blue-900 text-xl" : ""
+              className={`font-bold cursor-pointer text-gray-500 transition-colors duration-300 ${activeDiv === 3 ? "before:content-['|'] before:px-2 before:ml-0.5 before:text-orange-500 text-blue-700 text-xl" : ""
                 } hover:text-sky-500 hover:scale-105`}
             >
               Projects
@@ -50,7 +51,7 @@ export default function Home() {
               onClick={() => {
                 handleLinkClick(4);
               }}
-              className={`font-bold cursor-pointer text-gray-500 transition-colors duration-300 ${activeDiv === 4 ? "before:content-['|'] before:px-2 before:ml-0.5 before:text-orange-500 text-blue-900 text-xl" : ""
+              className={`font-bold cursor-pointer text-gray-500 transition-colors duration-300 ${activeDiv === 4 ? "before:content-['|'] before:px-2 before:ml-0.5 before:text-orange-500 text-blue-700 text-xl" : ""
                 } hover:text-sky-500 hover:scale-105`}
             >
               Contact
