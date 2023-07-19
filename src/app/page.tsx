@@ -52,7 +52,7 @@ colors duration-300 ${activeDiv === 1 ?
               Projects
             </a>
             <a
-              href="/docs"
+              href=""
               onClick={() => {
                 handleLinkClick(4);
               }}
