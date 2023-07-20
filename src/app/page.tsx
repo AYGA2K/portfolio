@@ -3,7 +3,7 @@ import * as React from "react";
 import Image from 'next/image'
 import { FaDocker, FaGit, FaGitAlt, FaGithub, FaJava, FaLaravel, FaLinkedin, FaPhp, FaPython, FaReact, FaVuejs, } from 'react-icons/fa';
 import { BiLogoGoLang, BiLogoTypescript } from 'react-icons/bi'
-import { SiExpress, SiFlutter, SiNeovim, SiNestjs, SiNuxtdotjs, SiPrisma, SiQuasar, SiTailwindcss, SiTypescript } from 'react-icons/si'
+import { SiExpress, SiFlutter, SiGithub, SiNeovim, SiNestjs, SiNuxtdotjs, SiPrisma, SiQuasar, SiTailwindcss, SiTypescript } from 'react-icons/si'
 import { TbBrandCpp, TbBrandNextjs } from 'react-icons/tb'
 import { FcLinux } from 'react-icons/fc'
 import Link from "next/link";
@@ -67,11 +67,11 @@ colors duration-300 ${activeDiv === 1 ?
         justify-center items-center sm:gap-10 ${activeDiv == 1 ? 'sm:block' : 'sm:hidden'} `}>
           <div className="flex px-8 w-full justify-between sm:justify-around items-center">
             <div>
-              <FcLinux size={"3em"} color="green" />
+              <FcLinux className=" hover:rotate-[360deg] duration-1000 " size={"3em"} color="green" />
             </div>
 
             <div>
-              <SiNeovim size={"3em"} color="green" />
+              <SiNeovim size={"3em"} className="hover:rotate-[360deg] duration-1000  " color="green" />
             </div>
 
 
@@ -80,7 +80,7 @@ colors duration-300 ${activeDiv === 1 ?
             flex justify-center gap-x-40   items-center ">
 
             <Image
-              className="flex justify-center p-2 border-4 shadow-lg shadow-blue-300 border-blue-300 rounded-full items-center"
+              className="flex justify-center p-1 border-4 shadow-lg shadow-blue-300 border-blue-300 rounded-full items-center"
               src="/DSC_1607.jpg"
               width={150}
               height={150}
@@ -101,7 +101,7 @@ colors duration-300 ${activeDiv === 1 ?
           <div className="flex px-16 sm:px-28 pt-5 w-full justify-between sm:justify-around items-center" >
 
             <div className="">
-              <button type="button" className="text-white sm:w-64 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Resume</button>
+              <button type="button" className="text-white md:w-64 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Resume</button>
             </div>
             <div className="flex gap-x-2">
               <Link href={"https://www.linkedin.com/in/ayoub-garouat-aa7a601ba/"}>
@@ -425,48 +425,65 @@ colors duration-300 ${activeDiv === 1 ?
 
         <div id="projects" className={`sm:flex  text-xl  sm:w-full ${activeDiv == 3 ? 'sm:block' : 'sm:hidden'}`}>
           <div className="sm:flex flex-col justify-center w-full   sm:h-screen items-center ">
-            <h1 className="text-center  text-3xl pb-10  text-blue-500 font-bold ">Projects</h1>
+            <h1 className="text-center  text-3xl text-blue-500 font-bold ">Projects</h1>
 
-            <div className="sm:flex sm:flex-row flex-wrap px-2 sm:px-0 flex-col gap-4 items-center justify-center ">
-              <div className="w-full sm:w-5/12  shadow-md rounded-lg p-6">
-                <h2 className="text-xl font-bold mb-4">Project 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <div className="  flex gap-1 mt-4">
-                  <p className="rounded-full text-gray-700 bg-blue-200 px-4 "> Python</p>
+            <div className="flex sm:flex-row flex-wrap px-2 py-10 md:px-0 flex-col gap-4 items-center justify-center ">
 
-                </div>
-              </div>
-              <div className="w-full sm:w-5/12   shadow-md rounded-lg p-6">
-                {/* Project Content */}
-                <h2 className="text-xl font-bold mb-4">Project 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <div className="  flex gap-1 mt-4">
-                  <p className="rounded-full text-gray-700 bg-blue-200 px-4 "> Python</p>
-
+              <div className=" flex flex-col justify-between  md:w-5/12 shadow-md bg-gray-50 xl:min-h-[200px] lg:min-h-[280px]  md:min-h-[330px] rounded-lg p-6">
+                <h2 className=" text-blue-950 font-bold  ">Product showcase website</h2>
+                <p className="text-base">
+                  This project is a website for a company that specializes in selling high-quality equipment for public works.
+                </p>
+                <div className="flex flex-wrap gap-1">
+                  <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">Vue.js</p>
+                  <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">Express</p>
+                  <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">MySQL</p>
+                  <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">Sequelize</p>
                 </div>
               </div>
 
-              <div className="w-full sm:w-5/12   shadow-md rounded-lg p-6">
-                {/* Project Content */}
-                <h2 className="text-xl font-bold mb-4">Project 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <div className="  flex gap-1 mt-4">
-                  <p className="rounded-full text-gray-700 bg-blue-200 px-4 "> Python</p>
+              <div className="flex flex-col justify-between md:w-5/12 shadow-md bg-gray-50 xl:min-h-[200px] lg:min-h-[280px]  md:min-h-[330px] rounded-lg p-6">
+                <h2 className="text-blue-950 font-bold  ">Health Monitoring Application</h2>
+                <p className="text-base">
+                  Health Monitoring Application featuring real-time health data tracking on both web and mobile platforms.    </p>
+                <div className="flex flex-wrap gap-1 ">
+                  <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">Quasar</p>
+                  <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">WebSocket</p>
+                  <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">PostgreSQL</p>
+                  <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">Gofiber</p>
+                  <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">Gorm</p>
+                  <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">Vue.js</p>
+                </div>
+              </div>
+              <div className="flex flex-col justify-between  w-full md:w-5/12 shadow-md bg-gray-50 xl:min-h-[200px] lg:min-h-[280px]  md:min-h-[330px] rounded-lg p-6">
+                <h2 className="text-blue-950 font-bold  ">LinkedIn Clone</h2>
+                <p className="text-base">
+                  This project was made in order to improve my Flutter skills.
+                </p>
+                <div className="flex flex-wrap gap-1 ">
+                  <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">Flutter</p>
 
                 </div>
               </div>
-
-              <div className="w-full sm:w-5/12   shadow-md rounded-lg p-6">
-                {/* Project Content */}
-                <h2 className="text-xl font-bold mb-4">Project 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <div className="  flex gap-1 mt-4">
-                  <p className="rounded-full text-gray-700 bg-blue-200 px-4 "> Python</p>
-
+              <div className="flex flex-col justify-between w-full  md:w-5/12 shadow-md bg-gray-50 xl:min-h-[200px] lg:min-h-[280px]  md:min-h-[330px] rounded-lg p-6">
+                <h2 className="text-blue-950 font-bold">Custom C Shell</h2>
+                <p className="text-base">
+                  This project represents a custom shell implementation with support for built-in commands and arithmetic calculations.
+                </p>
+                <div className="flex flex-wrap gap-1 ">
+                  <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">C Language</p>
                 </div>
               </div>
 
 
+            </div>
+            <div className="flex justify-center items-center">
+              <Link href={""} className="bg-sky-800 flex w-32 justify-center items-center gap-x-2 hover:bg-gray-100 hover:text-sky-800 text-white font-bold py-2 px-4 rounded">
+                <h4 className="text-sm ">
+                  See More
+                </h4>
+                <SiGithub size={"1em"} className="animate-bounce" />
+              </Link>
 
             </div>
           </div>
@@ -475,3 +492,4 @@ colors duration-300 ${activeDiv === 1 ?
     </>
   );
 }
+
