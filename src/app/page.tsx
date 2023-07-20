@@ -427,7 +427,7 @@ colors duration-300 ${activeDiv === 1 ?
           <div className="sm:flex flex-col justify-center w-full   sm:h-screen items-center ">
             <h1 className="text-center  text-3xl pb-10  text-blue-500 font-bold ">Projects</h1>
 
-            <div className="sm:flex sm:flex-row flex-wrap flex-col gap-4 items-center justify-center ">
+            <div className="sm:flex sm:flex-row flex-wrap px-2 sm:px-0 flex-col gap-4 items-center justify-center ">
               <div className="w-full sm:w-5/12  shadow-md rounded-lg p-6">
                 <h2 className="text-xl font-bold mb-4">Project 1</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
