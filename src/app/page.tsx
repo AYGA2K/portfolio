@@ -80,7 +80,7 @@ colors duration-300 ${activeDiv === 1 ?
             flex justify-center gap-x-40   items-center ">
 
             <Image
-              className="flex justify-center p-4 border-4 shadow-lg shadow-blue-300 border-blue-300 rounded-full items-center"
+              className="flex justify-center p-2 border-4 shadow-lg shadow-blue-300 border-blue-300 rounded-full items-center"
               src="/DSC_1607.jpg"
               width={150}
               height={150}
@@ -107,7 +107,7 @@ colors duration-300 ${activeDiv === 1 ?
               <Link href={"https://www.linkedin.com/in/ayoub-garouat-aa7a601ba/"}>
                 <FaLinkedin className="fill-blue-800 cursor-pointer" size={"2em"} />
               </Link>
-              <Link href={""}>
+              <Link href={"https://github.com/AYGA2K"}>
                 <FaGithub className="cursor-pointer" size={"2em"} />
               </Link>
             </div>
