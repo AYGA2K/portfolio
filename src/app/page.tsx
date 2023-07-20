@@ -80,7 +80,7 @@ colors duration-300 ${activeDiv === 1 ?
             flex justify-center gap-x-40   items-center ">
 
             <Image
-              className="flex justify-center items-center"
+              className="flex justify-center p-4 border-4 shadow-lg shadow-blue-300 border-blue-300 rounded-full items-center"
               src="/DSC_1607.jpg"
               width={150}
               height={150}
