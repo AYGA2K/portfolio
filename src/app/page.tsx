@@ -127,7 +127,7 @@ colors duration-300 ${activeDiv === 1 ?
           </div>
 
         </div>
-        <div id="skills" className={`sm:flex sm:px-0 sm:w-full  ${activeDiv == 2 ? 'sm:block' : 'sm:hidden'} `}>
+        <div id="skills" className={`sm:flex sm:py-8 md:py-0 sm:w-full  ${activeDiv == 2 ? 'sm:block' : 'sm:hidden'} `}>
           <div className="sm:flex flex-col justify-center sm:h-screen w-full items-center  ">
             <h1 className="text-center  text-3xl font-bold text-blue-500 pb-10 " > Skills </h1>
             <div className="flex flex-wrap flex-col gap-4 sm:flex-row justify-center  items-start">
@@ -363,7 +363,7 @@ colors duration-300 ${activeDiv === 1 ?
 
                   </Link>
                   <Link href={"https://gorm.io/"} className=" border-sky-300 sm:w-48 w-40 border-2 px-4 sm:px-8 
-                    rounded-lg hover:scale-[1.03] flex py-2  gap-2 items-center">
+                    rounded-lg hover:scale-[1.03] flex py-[0.2rem] sm:py-1  gap-2 items-center">
 
                     <Image
                       className="to-blue-200 ml-1 "
