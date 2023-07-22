@@ -1,19 +1,60 @@
 "use client";
 import * as React from "react";
 import Image from 'next/image'
-import { FaDocker, FaGit, FaGitAlt, FaGithub, FaJava, FaLaravel, FaLinkedin, FaPhp, FaPython, FaReact, FaVuejs, } from 'react-icons/fa';
-import { BiLogoGoLang, BiLogoTypescript } from 'react-icons/bi'
+import { FaDocker, FaGitAlt, FaGithub, FaJava, FaLaravel, FaLinkedin, FaPhp, FaPython, FaReact, FaVuejs, } from 'react-icons/fa';
+import { BiLogoGoLang, } from 'react-icons/bi'
 import { SiExpress, SiFlutter, SiGithub, SiNeovim, SiNestjs, SiNuxtdotjs, SiPrisma, SiQuasar, SiTailwindcss, SiTypescript } from 'react-icons/si'
 import { TbBrandCpp, TbBrandNextjs } from 'react-icons/tb'
 import { FcLinux } from 'react-icons/fc'
 import Link from "next/link";
 export default function Home() {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const email: string | undefined = document?.querySelector<HTMLInputElement>('#email')?.value;
+
+
+    const subject: string | undefined = document?.querySelector<HTMLInputElement>('#subject')?.value;
+
+
+    const message: string | undefined = document?.querySelector<HTMLInputElement>('#message')?.value;
+    try {
+
+      const response = await fetch("/api/send_email", {
+
+        method: "POST",
+        body: JSON.stringify({
+          email: email,
+          message: message,
+          subject: subject
+        }),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      });
+
+
+      const data = await response.json();
+
+
+      if (data.success) {
+        // Handle successful email sending
+        console.log("Email sent successfully");
+      } else {
+        // Handle email sending error
+        console.error("Email sending failed");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+  };
   const [activeDiv, setActiveDiv] = React.useState(1)
   function handleLinkClick(num: number) {
     setActiveDiv(num)
   }
   return (
     <>
+
       <div className="sm:flex sm:p-0 py-5 justify-start items-center gap-x-[5%]  ">
         <div className="hidden  sm:w-1/4   h-screen sm:block  ">
           <div className="  h-screen   sm:flex sm:flex-col 
@@ -52,7 +93,7 @@ colors duration-300 ${activeDiv === 1 ?
               Projects
             </a>
             <a
-              href=""
+              href="#contact"
               onClick={() => {
                 handleLinkClick(4);
               }}
@@ -80,7 +121,7 @@ colors duration-300 ${activeDiv === 1 ?
             flex justify-center gap-x-40   items-center ">
 
             <Image
-              className="flex justify-center p-1 border-4 shadow-lg shadow-blue-300 border-blue-300 rounded-full items-center"
+              className="flex justify-center p-1 border-4 bg-white hover:shadow-blue-500 hover:shadow-xl shadow-lg shadow-blue-300 border-blue-300 rounded-full items-center"
               src="/DSC_1607.jpg"
               width={150}
               height={150}
@@ -101,7 +142,7 @@ colors duration-300 ${activeDiv === 1 ?
           <div className="flex px-16 sm:px-28 pt-5 w-full justify-between sm:justify-around items-center" >
 
             <div className="">
-              <button type="button" className="text-white md:w-64 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Resume</button>
+              <button type="button" className="text-white  md:w-64 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Resume</button>
             </div>
             <div className="flex gap-x-2">
               <Link href={"https://www.linkedin.com/in/ayoub-garouat-aa7a601ba/"}>
@@ -223,7 +264,6 @@ colors duration-300 ${activeDiv === 1 ?
                       Nextjs
 
                     </h4>
-
                   </Link>
 
                   <Link href={"https://nuxt.com/"} className=" border-sky-300 w-40 sm:w-48 border-2 px-4 sm:px-8 
@@ -468,7 +508,8 @@ colors duration-300 ${activeDiv === 1 ?
               <div className="flex flex-col justify-between w-full  md:w-5/12 shadow-md bg-gray-50 xl:min-h-[200px] lg:min-h-[280px]  md:min-h-[330px] rounded-lg p-6">
                 <h2 className="text-blue-950 font-bold">Custom C Shell</h2>
                 <p className="text-base">
-                  This project represents a custom shell implementation with support for built-in commands and arithmetic calculations.
+                  c This project represents a custom shell implementation with support for built-in commands and arithmetic calculations.
+                  rows="4"
                 </p>
                 <div className="flex flex-wrap gap-1 ">
                   <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">C Language</p>
@@ -478,7 +519,7 @@ colors duration-300 ${activeDiv === 1 ?
 
             </div>
             <div className="flex justify-center items-center">
-              <Link href={""} className="bg-sky-800 flex w-32 justify-center items-center gap-x-2 hover:bg-gray-100 hover:text-sky-800 text-white font-bold py-2 px-4 rounded">
+              <Link href={"https://github.com/AYGA2K"} className="bg-sky-800 flex w-32 justify-center items-center gap-x-2 hover:bg-sky-500  text-white font-bold py-2 px-4 rounded">
                 <h4 className="text-sm ">
                   See More
                 </h4>
@@ -488,6 +529,67 @@ colors duration-300 ${activeDiv === 1 ?
             </div>
           </div>
         </div>
+        <div className="block sm:hidden py-16 " >
+          <div className="flex  justify-center ">
+            <div className="w-32 md:w-64 h-4 flex justify-between gap-1">
+              <div className="w-1/3 border-4 border-white-500 bg-blue-500 rounded-lg"></div>
+              <div className="flex w-1/3">
+                <div className="w-1/3 border-4 border-white-500 bg-blue-500 rounded-full"></div>
+                <div className="w-1/3 border-4 border-white-500 bg-blue-500 rounded-full"></div>
+                <div className="w-1/3 border-4 border-white-500 bg-blue-500 rounded-full"></div>
+              </div>
+              <div className="w-1/3 border-4 border-white-500 bg-blue-500 rounded-lg"></div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div id="contact" className={` w-full lg:p-20 ${activeDiv == 4 ? 'sm:block' : 'sm:hidden'}`}>
+
+          <div className="  rounded-lg  shadow-md  p-8  w-full flex-col flex justify-center items-center ">
+            <h2 className="text-2xl text-center text-blue-500 font-bold ">Contact</h2>
+
+            <form action="" onSubmit={handleSubmit} className="w-full" method="post">
+              <div className="py-4 ">
+                <label htmlFor="email" className="block font-bold text-gray-700">Email</label>
+                <input type="email" id="email" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2 " placeholder="name@gmail.com" required />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="subject" className="block font-bold text-gray-700">Subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  placeholder="subject..."
+                  required
+                  className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2 "
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="message" className="block font-bold text-gray-700">Message</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows={6}
+                  placeholder="your message..."
+                  required
+                  className=" shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2 "
+                ></textarea>
+              </div>
+              <div className="text-center">
+                <button
+                  type="submit"
+                  className="px-6 w-10/12 py-2 text-white font-bold bg-blue-500 rounded hover:bg-blue-600"
+                >
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+        </div >
+
+
       </div >
     </>
   );
