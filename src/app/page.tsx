@@ -268,7 +268,7 @@ colors duration-300 ${
                     <Image
                       className="to-blue-200 ml-1"
                       src="/icon-192x192.png"
-                      width={40}
+                      width={32}
                       height={0}
                       alt="Picture of the author"
                     />
@@ -282,7 +282,7 @@ colors duration-300 ${
                 rounded-lg hover:scale-[1.03] flex  justify-center gap-2 items-center"
                   >
                     <Image
-                      className="to-blue-200 my-1 ml-1 mx-2"
+                      className="to-blue-200 ml-1 mx-2"
                       src="/color.svg"
                       width={23}
                       height={0}
