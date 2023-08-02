@@ -12,6 +12,18 @@ export async function POST(req: any) {
     },
   });
 
+  await new Promise((resolve, reject) => {
+    // verify connection configuration
+    transporter.verify(function (error, success) {
+      if (error) {
+        console.log(error);
+        reject(error);
+      } else {
+        console.log("Server is ready to take our messages");
+        resolve(success);
+      }
+    });
+  });
   const mailOptions = {
     from: body.email,
     to: "garouatayoub@gmail.com",
@@ -19,17 +31,20 @@ export async function POST(req: any) {
     html: body.message,
   };
 
-  try {
-    const info = await transporter.sendMail(mailOptions);
-    console.log("Email sent: " + info.response);
+  await new Promise((resolve, reject) => {
+    // send mail
+    transporter.sendMail(mailOptions, (err, info) => {
+      if (err) {
+        console.error(err);
+        reject(err);
+      } else {
+        console.log(info);
+        resolve(info);
+      }
+    });
+  });
 
-    return NextResponse.json({
-      status: 200,
-    });
-  } catch (error) {
-    console.error("Error sending email:", error);
-    return NextResponse.json({
-      status: 401,
-    });
-  }
+  return NextResponse.json({
+    status: 200,
+  });
 }
