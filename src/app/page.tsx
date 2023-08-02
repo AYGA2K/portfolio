@@ -646,7 +646,7 @@ colors duration-300 ${
             activeDiv == 4 ? "sm:block" : "sm:hidden"
           }`}
         >
-          <div className="  rounded-lg  shadow-md  p-8  w-full flex-col flex justify-center items-center ">
+          <div className="  md:rounded-lg  md:shadow-md  p-8  w-full flex-col flex justify-center items-center ">
             <h2 className="text-2xl text-center text-blue-500 font-bold ">
               Contact
             </h2>
