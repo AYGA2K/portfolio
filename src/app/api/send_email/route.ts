@@ -4,11 +4,11 @@ export async function POST(req: any) {
   const body = await req.json();
   // Send email using nodemailer
   const transporter = nodemailer.createTransport({
-    host: "smtp.sendgrid.net",
-    port: 587,
+    service: "gmail",
+
     auth: {
-      user: "apikey",
-      pass: process.env.KEY,
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASS,
     },
   });
 
@@ -25,7 +25,7 @@ export async function POST(req: any) {
     });
   });
   const mailOptions = {
-    from: "garouatayoub@gmail.com",
+    from: body.email,
     to: "garouatayoub@gmail.com",
     subject: body.subject,
     html: body.message,
