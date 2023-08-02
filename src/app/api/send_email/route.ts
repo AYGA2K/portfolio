@@ -28,7 +28,39 @@ export async function POST(req: any) {
     from: body.email,
     to: "garouatayoub@gmail.com",
     subject: body.subject,
-    html: body.message,
+    html: `
+        <html>
+        <head>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    line-height: 1.6;
+                    background-color: #f5f5f5;
+                }
+                .email-container {
+                    max-width: 600px;
+                    margin: 0 auto;
+                    padding: 20px;
+                    background-color: #fff;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+                .sender {
+                    font-weight: bold;
+                }
+                .message {
+                    margin-top: 10px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="email-container">
+                <p class="sender">Sender: ${body.email}</p>
+                <p class="message">Message: ${body.message}</p>
+            </div>
+        </body>
+        </html>
+    `,
   };
 
   await new Promise((resolve, reject) => {
