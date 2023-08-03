@@ -30,20 +30,18 @@ import { TbBrandCpp, TbBrandNextjs } from "react-icons/tb";
 import { FcLinux } from "react-icons/fc";
 import Link from "next/link";
 export default function Home() {
+  const [email, setEmail] = React.useState("");
+  const [subject, setSubject] = React.useState("");
+  const [message, setMessage] = React.useState("");
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const email = document?.querySelector<HTMLInputElement>("#email");
-
-    const subject = document?.querySelector<HTMLInputElement>("#subject");
-
-    const message = document?.querySelector<HTMLInputElement>("#message");
     try {
       const response = await fetch("/api/send_email", {
         method: "POST",
         body: JSON.stringify({
-          email: email?.value,
-          message: message?.value,
-          subject: subject?.value,
+          email: email,
+          message: message,
+          subject: subject,
         }),
         headers: {
           Accept: "application/json",
@@ -57,9 +55,9 @@ export default function Home() {
         console.log("Email sent successfully");
         if (email && subject && message) {
           // Clear input values
-          email.value = "";
-          subject.value = "";
-          message.value = "";
+          setEmail("");
+          setSubject("");
+          setMessage("");
         }
       } else {
         // Handle email sending error
@@ -392,7 +390,7 @@ colors duration-300 ${
                   <Link
                     href={"https://isocpp.org/"}
                     className=" border-sky-300 w-40 sm:w-48 border-2 px-4 sm:px-8 
-                rounded-lg hover:scale-[1.03] flex  justify-around items-center"
+                rounded-lg hover:scale-[1.03] flex  gap-x-2 justify-center items-center"
                   >
                     <TbBrandCpp size={"2em"} className="" />
                     <h4 className="text-gray-600 text-center font-medium text-xl lg:text-base">
@@ -402,7 +400,7 @@ colors duration-300 ${
                   <Link
                     href={"https://www.python.org/"}
                     className=" border-sky-300 w-40 sm:w-48 border-2 px-4 sm:px-8 
-                rounded-lg hover:scale-[1.03] flex  gap-2 items-center"
+                rounded-lg hover:scale-[1.03] flex justify-center  gap-2 items-center"
                   >
                     <FaPython size={"2em"} className="fill-blue-700" />
                     <h4 className="text-gray-600 text-center font-medium text-xl lg:text-base">
@@ -412,7 +410,7 @@ colors duration-300 ${
                   <Link
                     href={"https://www.php.net/"}
                     className=" border-sky-300 w-40 sm:w-48 border-2 px-4 sm:px-8 
-                rounded-lg hover:scale-[1.03] flex  gap-x-7 items-center"
+                rounded-lg hover:scale-[1.03] flex justify-center  gap-x-2 items-center"
                   >
                     <FaPhp size={"2em"} className="fill-black " />
                     <h4 className="text-gray-600 text-center font-medium text-xl lg:text-base">
@@ -422,7 +420,7 @@ colors duration-300 ${
                   <Link
                     href={"https://www.java.com/en/"}
                     className=" border-sky-300 w-40 sm:w-48 border-2 px-4 sm:px-8 
-                rounded-lg hover:scale-[1.03] flex  gap-2 items-center"
+                rounded-lg hover:scale-[1.03] flex justify-center gap-2 items-center"
                   >
                     <FaJava size={"2em"} className="fill-blue-600 py-1" />
                     <h4 className="text-gray-600 text-center font-medium text-xl lg:text-base">
@@ -666,7 +664,10 @@ colors duration-300 ${
                 </label>
                 <input
                   type="email"
-                  id="email"
+                  value={email}
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                  }}
                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2 "
                   placeholder="name@gmail.com"
                   required
@@ -682,7 +683,10 @@ colors duration-300 ${
                 <input
                   type="text"
                   name="subject"
-                  id="subject"
+                  value={subject}
+                  onChange={(event) => {
+                    setSubject(event.target.value);
+                  }}
                   placeholder="subject..."
                   required
                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2 "
@@ -697,7 +701,10 @@ colors duration-300 ${
                 </label>
                 <textarea
                   name="message"
-                  id="message"
+                  value={message}
+                  onChange={(event) => {
+                    setMessage(event.target.value);
+                  }}
                   rows={6}
                   placeholder="your message..."
                   required
