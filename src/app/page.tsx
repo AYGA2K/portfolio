@@ -188,12 +188,12 @@ colors duration-300 ${
           </div>
           <div className="flex px-16 sm:px-28 pt-5 w-full justify-between sm:justify-around items-center">
             <div className="">
-              <button
-                type="button"
+              <Link
+                href={"/Resume.pdf"}
                 className="text-white  md:w-64 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
               >
                 Resume
-              </button>
+              </Link>
             </div>
             <div className="flex gap-x-2">
               <Link
