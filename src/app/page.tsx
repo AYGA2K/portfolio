@@ -23,6 +23,7 @@ import {
   SiNuxtdotjs,
   SiPrisma,
   SiQuasar,
+  SiSpring,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
@@ -246,6 +247,17 @@ colors duration-300 ${
                     <SiNestjs size={"2em"} className="fill-red-500 " />
                     <h4 className="text-gray-600 text-center font-medium text-xl lg:text-base">
                       Nestjs
+                    </h4>
+                  </Link>
+
+                  <Link
+                    href={"https://spring.io/"}
+                    className=" border-sky-300 w-40 sm:w-40 border-2 px-4 sm:px-8 
+                rounded-lg hover:scale-[1.03] flex  justify-center gap-2 items-center"
+                  >
+                    <SiSpring size={"2em"} className="fill-green-500 " />
+                    <h4 className="text-gray-600 text-center font-medium text-xl lg:text-base">
+                      Spring
                     </h4>
                   </Link>
                   <Link
