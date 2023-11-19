@@ -616,7 +616,6 @@ colors duration-300 ${
                 <p className="text-base">
                   c This project represents a custom shell implementation with
                   support for built-in commands and arithmetic calculations.
-                  rows="4"
                 </p>
                 <div className="flex flex-wrap gap-1 ">
                   <p className="rounded-full text-gray-700 bg-blue-200 text-sm px-4">
