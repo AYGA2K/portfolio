@@ -2,6 +2,7 @@
 import * as React from "react";
 import Image from "next/image";
 import {
+  FaAngular,
   FaDocker,
   FaGitAlt,
   FaGithub,
@@ -317,6 +318,16 @@ colors duration-300 ${
               <div className="flex flex-col w-full sm:w-auto justify-center gap-y-4 items-center">
                 <h2 className=" font-bold">FrontEnd</h2>
                 <div className="flex gap-2 sm:flex-col flex-wrap justify-center items-center">
+                  <Link
+                    href={"https://angular.io/"}
+                    className=" border-sky-300 w-40 sm:w-48 border-2 px-4 sm:px-8 
+                rounded-lg hover:scale-[1.03] flex  gap-2 items-center"
+                  >
+                    <FaAngular size={"2em"} className="fill-red-500" />
+                    <h4 className="text-gray-600 text-center font-medium text-xl lg:text-base">
+                      Angular
+                    </h4>
+                  </Link>
                   <Link
                     href={"https://react.dev/"}
                     className=" border-sky-300 w-40 sm:w-48 border-2 px-4 sm:px-8 
