@@ -166,7 +166,7 @@ colors duration-300 ${
           >
             <Image
               className="flex justify-center p-1 border-4 bg-white hover:shadow-blue-500 hover:shadow-xl shadow-lg shadow-blue-300 border-blue-300 rounded-full items-center"
-              src="/DSC_1607.jpg"
+              src="/profile.jpeg"
               width={150}
               height={150}
               alt="Picture of the author"
